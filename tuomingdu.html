@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+	 	draw(context)
+	 	function draw(cxt){
+			cxt.globalAlpha = 0.7;
+			cxt.fillStyle = "#058";
+			cxt.fillRect(200,200,300,300);
+
+			
+
+			cxt.fillStyle = "red";
+			cxt.fillRect(300,300,300,300);
+			
+			cxt.fillStyle = "yellow";
+			cxt.fillRect(400,400,300,300);
+			
+
+	 	}
+
+	
+	 	</script>
+</body>
+</html>

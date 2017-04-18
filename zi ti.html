@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head> 
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+	 	context.font="bold 40px Airal";
+	 	context.fillStyle= "#058";
+	 	context.fillText("最咸的 xian yu",40,200);
+	 	context.strokeStyle="#058";
+	 	context.strokeText("xian yu !",40,400)
+	 </script>
+</body>
+</html>

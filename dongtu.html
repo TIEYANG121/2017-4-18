@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid #ccc;
+		}
+
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+
+	<script>
+		var ball = {
+			x:800,
+			y:800,
+			r:20,
+			color:"#058",
+			vx:-5,
+			vy:-5
+		}
+		// 建一个小球
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			canvas.width = 2000;
+			canvas.height= 2000;
+			var context = canvas.getContext("2d");
+
+			setInterval(function(){
+				drawArc(context);
+				update();
+			},50)
+			// 小球每隔多长时间运动一次
+		}
+		function drawArc(cxt){
+			var canvas = cxt.canvas;
+			cxt.clearRect(0,0,canvas.width,canvas.height);
+			// 清除画布内所有的东西
+			cxt.fillStyle = ball.color;
+			cxt.beginPath();
+			cxt.arc(ball.x,ball.y,ball.r,0,Math.PI*2);
+			// 在页面内显示一个小球
+			cxt.closePath();
+			cxt.fill();
+		}
+		function update(){
+			ball.x += ball.vx;
+			ball.y += ball.vy;
+		}
+		// 小球运动方向
+
+
+	</script>
+</body>
+</html>

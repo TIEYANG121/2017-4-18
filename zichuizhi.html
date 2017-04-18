@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head> 
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+
+	 	var txt1 = "臭不要脸";
+
+		drawText(context,txt1);
+
+		function drawText(cxt,txt){
+			cxt.font = "bold 40px Airal";
+			cxt.fillStyle = "#058";
+
+			cxt.textBaseline = "top";
+			cxt.fillText(txt,50,400);
+			cxt.textBaseline = "middle";
+			cxt.fillText(txt,300,400);			
+			cxt.textBaseline = "bottom";
+			cxt.fillText(txt,550,400);
+			
+
+
+			//baseline
+
+			context.beginPath();
+			context.moveTo(0,400);
+			context.lineTo(800,400);
+			context.stroke();
+		}
+	 </script>
+</body>
+</html>

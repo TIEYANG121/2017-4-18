@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+	window.onload=function(){
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+	 	font(context,"red")
+	}
+
+		function font(txt,fillColor,fillText,strokeColor,strokeText){
+		txt.font="bold 40px Airal";
+	 	txt.fillStyle= fillColor;
+	 	txt.fillText("最咸的 xian yu",40,200);
+	 	txt.strokeStyle=strokeColor;
+	 	txt.strokeText("xian yu !",40,400)
+		}
+	 	
+	 </script>
+</body>
+</html>

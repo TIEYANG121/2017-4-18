@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+
+	 	context.font="italic small-caps bold 40px Airal";
+	 	context.fillStyle= bgi;
+	 	// context.fillText("最咸的 xian yu",40,200);
+
+	 	var bgi = new Image();
+	 	bgi.src="yangyang.JPG";
+		 bgi.onload=function(){
+	 		var patten = context.createPattern(bgi,"no-repeat");
+	 		context.fillStyle = patten
+	 		context.fillText("最咸的 Xianyu",40,200)
+		 }
+
+	
+	 	</script>
+</body>
+</html>

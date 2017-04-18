@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head> 
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+
+	 	var grd = context.createLinearGradient(0,0,800,500)
+	 	grd.addColorStop(0.0,"#fff")
+	 		 	
+	 	grd.addColorStop(0.1,"#f00")
+	 	grd.addColorStop(0.2,"#ff7f00")
+
+	 	grd.addColorStop(0.3,"#ff0")
+	
+	 	grd.addColorStop(0.5,"#0f0")
+	 
+	 	grd.addColorStop(0.7,"#0ff")
+
+	 	grd.addColorStop(0.8,"blue")
+	 	grd.addColorStop(0.9,"#8b00ff")
+
+	 	context.font="bold 100px Airal";
+	 	context.fillStyle= grd;
+	 	context.fillText("最咸的 xian yu",40,100);
+	 	
+	 	context.strokeStyle="#058";
+	 	context.strokeText("xian yu !",40,400)
+	 </script>
+</body>
+</html>

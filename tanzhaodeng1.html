@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+			#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="canvas"></canvas>
+	<script>
+		var canvas = document.querySelector('#canvas')
+	 	canvas.width = 800;
+	 	canvas.height = 800;
+	 	var context =canvas.getContext('2d');
+	 	draw(context)
+	 	function draw(cxt){
+	 
+	 		cxt.fillStyle = "#000";
+	 		cxt.fillRect(0,0,800,600);     
+	 		// 背景 黑色 起始点 结束点 
+
+
+			cxt.beginPath();
+			// 开始路径
+			cxt.arc(400,300,150,0,Math.PI*2);
+			// 圆
+			cxt.fillStyle = "#fff";
+			// 填充颜色
+			cxt.fill();
+			cxt.clip();
+			// 将在 圆 之后的 字 在 圆 外部的 隐藏
+			cxt.font = "bold 150px Airal";
+			// 字体
+			cxt.textAlign = "center";
+			cxt.textBaseline = "middle";
+			// 文字位置    水平 垂直
+			cxt.fillStyle = "#058";
+			// 填充的颜色
+			cxt.fillText("CANVAS",400,300);
+			// 要写什么字    字 的 起始位置
+
+	 	}
+
+	
+	 	</script>
+</body>
+</html>

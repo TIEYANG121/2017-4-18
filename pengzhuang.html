@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+		<style>
+		#canvas{
+			display: block;
+			margin: 0 auto;
+			border: 1px solid blue;
+		}
+		/*绘图环境   只能改变位置（外部）不能改变颜色，大小，（内部）*/
+	</style>
+</head>
+<body>
+		<canvas id="canvas"></canvas>
+
+	<script>
+		var ball = {
+			x:800,
+			y:600,
+			r:20,
+			color:"#058",
+			vx:-5,
+			vy:-5
+		}
+		// 建一个小球
+		window.onload = function(){
+			var canvas = document.getElementById('canvas');
+			canvas.width = 800;
+			canvas.height= 600;
+			var context = canvas.getContext("2d");
+
+			setInterval(function(){
+				drawArc(context);
+				update(context);
+			},50)
+			// 小球每隔多长时间运动一次
+		}
+		function drawArc(cxt){
+			var canvas = cxt.canvas;
+			cxt.clearRect(0,0,canvas.width,canvas.height);
+			// 清除画布内所有的东西
+			cxt.fillStyle = ball.color;
+			cxt.beginPath();
+			cxt.arc(ball.x,ball.y,ball.r,0,Math.PI*2);
+			// 在页面内显示一个小球
+			cxt.closePath();
+			cxt.fill();
+		}
+		function update(context){
+				ball.x += ball.vx;
+				ball.y += ball.vy;
+			if(ball.x-ball.r<=0){
+				ball.vx= -ball.vx;
+				ball.x=ball.r;
+				
+			}	
+			if(ball.y-ball.r<=0){
+				ball.vy= -ball.vy;
+				ball.y = ball.r;
+				
+
+			}
+			if(ball.x+ball.r>=context.canvas.width){
+				ball.vx=-ball.vx;
+				ball.x=context.canvas.width-ball.r;
+
+			}
+			if(ball.y+ball.r>=context.canvas.height){
+				ball.vy=-ball.vy;
+				ball.y=context.canvas.height-ball.r;
+
+			}
+			
+		}
+		// 小球运动方向
+
+
+	</script>
+</body>
+</html>
